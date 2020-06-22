@@ -1,0 +1,62 @@
+body{
+    background-color: #DAE0E2;
+}
+
+a, a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+.paginator{
+    margin-left:50px;
+    margin-top:390px;
+}
+
+
+.book-container{
+    margin-left: 20px;
+
+}
+
+.book-container img{
+    height: 200px;
+    width: 140px;
+    margin-left: 40px;
+}
+
+.book_image_home{
+	height:  220px;
+	width: 150px;
+	padding: 10px;
+}
+
+#block{
+	height: 50px;
+	width: 100px;
+}
+
+.left_paginatior{
+	margin-left: -100px;
+	margin-top: -550px;
+
+}
+
+.left_paginatior{
+	margin-left: -100px;
+	margin-top: -550px;
+
+}
+
+.right_paginatior{
+	margin-left: 1370px;
+	margin-top: -550px;
+}
+
+.left_arrow{
+	height: 50px;
+}
+
+.right_arrow{
+	height: 50px;
+}

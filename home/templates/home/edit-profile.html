@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block css %}
+        
+        <link rel="stylesheet" type="text/css" href="{% static '/css/edit-profile.css' %}">
+{% endblock %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+	<div class = "container">
+	    <form method = 'POST' enctype="multipart/form-data"> {% csrf_token %}
+
+	            {{ user_form.as_p }}
+	            {{ profile_form.as_p }}
+
+	            <input type="submit" value="Submit">
+	    </form>
+    </div>
+{% endblock %}

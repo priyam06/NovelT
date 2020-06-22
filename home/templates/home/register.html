@@ -1,0 +1,52 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static '/css/back.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}">
+{% endblock %}
+
+    {% block title %} Signup {% endblock %}
+
+{% block content %}
+
+    <div class = "login-form effect1">
+        <form class = "" method = "POST"> {% csrf_token %}
+            <h1>Sign Up</h1>
+
+                {{ form.username }}
+
+                {{ form.email }}
+
+                {{ form.password1 }}
+
+                {{ form.password2 }}
+
+            <input type="submit" value = "Create Account" class = "signup-btn">
+             {% for message in messages %}
+                <p id="msg"> {{ message }} </p>
+            {% endfor %}
+            <p id="t"> Already have an account? </p><button class = "btn mybtn"><a href = "{% url 'home:login' %}">Log in</a></button>
+        </form>
+    </div>
+       <script type="text/javascript">
+        
+    var form_fields = document.getElementsByTagName('input')
+
+        // form_fields[0].placeholder='Username';
+        // form_fields[1].placeholder='Email';
+        form_fields[3].placeholder='Password';
+        form_fields[4].placeholder='Re-enter Password';
+
+        for (var field in form_fields){
+            form_fields[field].className += ' form-control'
+        }
+</script>
+
+
+
+{% endblock %}
+
+{% block js %}
+ 
+{% endblock %}

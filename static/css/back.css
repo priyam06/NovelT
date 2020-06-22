@@ -1,0 +1,70 @@
+body {
+	/********** OLD GRADIENT ***********
+background: #67B26F;
+background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+background: linear-gradient(to right, #4ca2cd, #67B26F);
+background: #304352;
+background: -webkit-linear-gradient(to right, #d7d2cc, #304352);
+background: linear-gradient(to right, #d7d2cc, #304352);
+*/
+background-image: url('/static/images/background2.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+margin: 0;
+padding: 0;
+height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+
+#info{
+	font-size: 10px;
+    margin-left:20px;
+  color:white;
+}
+
+.carousel-control-next{
+    width: 5% !important;
+}
+
+.carousel-control-prev{
+    width: 5% !important;
+}
+
+#ff1{
+    margin-left:20px;
+}
+
+#ff2{
+    margin-left:49px;
+}
+
+
+#passlink:hover {
+    color:cyan;
+}
+
+#passlink:link{
+    color:white;
+}
+
+#passlink:visited{
+    color:white;
+}
+
+#t{
+    color: orange;
+}
+
+.mydiv{
+  margin-left: 1260px;
+}
+
+.search-btn{
+  margin-left: 470px;
+}

@@ -1,0 +1,85 @@
+body{
+	background-color: #DAE0E2;
+}
+
+.container{
+	margin: 0px;
+	margin-top: -24px;
+
+}
+
+.main_row{
+  height: 696px;
+}
+.profile-tab{
+  background-color:#2C3335;
+  color:orange;
+
+}
+
+.extra-tab{
+  background-color: #DAE0E2;
+  width: 100%;
+}
+
+#profile_pic{
+	height: auto;
+	width: 100%;
+	border-radius: 10%;
+}
+
+.first_row{
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.first_row h3{
+	color: white;
+	margin-top: 45px;
+	font-family: 'Poppins', sans-serif;
+}
+
+.bio{
+	color: white;
+	text-align: justify;
+}
+
+
+.second_row h3{
+	color: lightgreen;
+	font-family: 'Poppins', sans-serif;
+	font-size: 24px;
+	padding: 10px;
+}
+
+.book_image_home{
+	height:  220px;
+	width: 150px;
+	padding: 10px;
+}
+
+
+
+.left_paginatior{
+	margin-right:590px;
+	margin-top: -550px;
+}
+
+.right_paginatior{
+	margin-left: 1250px;
+	margin-top: -550px;
+	position: fixed;
+}
+
+.left_arrow{
+	height: 50px;
+}
+
+.right_arrow{
+	height: 50px;
+}
+
+.extra-tab{
+	position: relative;
+	left:200px;
+}

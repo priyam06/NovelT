@@ -1,0 +1,114 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+
+{% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static '/css/profile.css' %}">
+{% endblock %}
+
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+
+	<div class = "container"> 
+		<div class = "row main_row">
+			<div class = "col-4 profile-tab">					
+					<div class = "row first_row">
+
+						<div class = "col-5">
+							<img src = "{{ user.profile.profile_pic.url }}" alt = "Profile_PIC" id = "profile_pic">
+						</div>
+
+						<div class = "col">
+							<h3> {{ user.first_name }}  {{ user.last_name }} </h3>
+						</div>
+
+					</div>
+
+					<div class = "row second_row">
+						<div class = "col">
+							<h3>Followers</h3>
+						</div>
+
+						<div class = "col">
+							<h3>Following</h3>
+						</div>
+					</div>
+
+					<div class = "row third_row">
+
+						<div class = "col bio">
+							{{ user.profile.bio }}
+						</div>
+					</div>
+
+					<p id="msg"> {{ message }} </p>
+			</div>
+
+			<div class = "col-8 extra-tab" >
+				    {% if user_intrested_books %}
+						   <h2> You are intrested in this </h2>
+					{% else %}
+							<h2> You have not discoverd anything yet </h2>
+					{% endif %}
+					
+				  		<div class = "row">		
+							{% for book in user_intrested_books %}
+								<a href="{% url 'home:book-detail' book.books.id %}">
+							 		<img src = "{{ book.books.book_image.url }}" alt = "Book Cover" class = "book_image_home">
+							 	</a>
+							{% endfor %}
+						</div>
+
+					
+			</div>
+		</div>
+	</div>
+
+	<div class = "paginator">
+
+
+    {% if user_intrested_books.paginator.num_pages > 1 %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+     
+
+        <div class = "left_paginatior">
+            {% if user_intrested_books.has_previous %}
+                <li ><a href="?page={{ user_intrested_books.previous_page_number }}"><img src = "{% static 'icons/back.png' %}" class = "left_arrow"></a></li>
+            {% else %}
+            <li class = "disabled"><!-- <img src = "{% static 'icons/back.png' %}" class = "left_arrow"> --></li>
+            {% endif %}
+        </div>
+
+
+         <div class = "right_paginatior">
+            {% if user_intrested_books.has_next %}
+      
+                <li ><a href="?page={{ user_intrested_books.next_page_number }}"><img src = "{% static 'icons/next.png' %}" class = "right_arrow"></a></li>
+            {% else %}
+              <div class = "next_page">
+                <li class="disabled"><a href="#"><!-- <img src = "{% static 'icons/next.png' %}" class = "right_arrow"> --></a></li>
+
+            {% endif %}
+          </div>
+      
+    </ul>
+</nav>
+{% endif %}
+</div>
+</ul>
+</nav>
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+
+	alert("Go to Profile -> setting to setup your profile.");
+	
+{% endblock %}

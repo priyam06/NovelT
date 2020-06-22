@@ -1,0 +1,28 @@
+html {
+  height: 100%;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: #DAE0E2;
+}
+
+.container {
+  width: 500px;
+  clear: both;
+  text-align: center;
+  font-family: 'Josefin Sans', 'Poppins', sans-serif;
+  font-size: 18px;
+  background-color: #343A40;
+  color: white;
+  border-radius: 10px;
+  padding:30px;
+}
+
+.container input {
+  width: 100%;
+  clear: both;
+}
+

@@ -1,0 +1,200 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block css %}
+
+        <link rel="stylesheet" type="text/css" href="{% static '/css/after-reg.css' %}">
+{% endblock %}
+{% block title %} Genre Selection {% endblock %}
+
+{% block content %}
+
+
+ <h2 id="gen-heading"> Select your preferred geners </h2>
+<div class ="gen-container">
+<form action = "" method = "POST">
+    <div id="grid">
+        
+        
+            <div id="areaA " class = "hover13 column romance">
+                <inupt type = "hidden" id = "romance" name = "romance" value = "" ></inupt>
+                <figure>
+                    <img src="/images/book_geners_images/heart.svg">
+                     <p id="g-tag">Romance</p>
+                </figure>
+            </div>
+        
+            <div id="areaB" class = "hover13 column art">
+                <figure>
+                    <img src="/images/book_geners_images/creativity.svg">
+                    <p id="g-tag-art">Art</p>
+                </figure>
+            </div>
+
+            <div id="areaC" class = "hover13 column crime">
+                <figure>
+                    <img src="/images/book_geners_images/detective.svg">
+                    <p id="g-tag-crime">Crime</p>
+                </figure>
+            </div>
+
+            <div id="areaD" class = "hover13 column horror">
+                <figure>
+                    <img src="/images/book_geners_images/fear.svg">
+                    <p id="g-tag-horror">Horror</p>
+                </figure>
+            </div>
+
+            <div id="areaE" class = "hover13 column cooking">
+                <figure>
+                    <img src="/images/book_geners_images/dinner.svg">
+                    <p id="g-tag">Cooking</p>
+                </figure>
+            </div>
+
+            <div id="areaF" class = "hover13 column adventure">
+                <figure>
+                    <img src="/images/book_geners_images/backpack.svg">
+                    <p id="g-tag">Adventure</p>
+                </figure>
+            </div>
+
+            <div id="areaA" class = "hover13 column fantasy">
+                <figure>
+                    <img src="/images/book_geners_images/castle.svg">
+                    <p id="g-tag-modi">Fantasy</p>
+                </figure>
+            </div>
+
+            <div id="areaC" class = "hover13 column history">
+                <figure>
+                    <img src="/images/book_geners_images/egypt.svg">
+                    <p id="g-tag-modi">History</p>
+                </figure>
+            </div>
+
+            <div id="areaD" class = "hover13 column travel">
+                <figure>
+                    <img src="/images/book_geners_images/international.svg">
+                    <p id="g-tag-travel">Travel</p>
+                </figure>
+            </div>
+
+            <div id="areaE" class = "hover13 column fiction">
+                <figure>
+                    <img src="/images/book_geners_images/molecule.svg">
+                    <p id="g-tag"> &nbsp; Fiction</p>
+            </figure>
+            </div>
+
+            <div id="areaF" class = "hover13 column sci-fi">
+                <figure>
+                <img src="/images/book_geners_images/robot.svg">
+                <p id="g-tag-sci">Sci-fi</p>
+            </figure>
+            </div>
+
+
+
+        </form>
+
+    </div>
+
+        <div class = "right_paginatior">
+        
+                <button id = "test" onclick="send_data()"><img src = "{% static 'icons/next.png' %}" class = "right_arrow"></button>
+                <a href = "{% url 'home:home' %}"><button id = "myCheck">Home</button> </a>
+        </div>
+
+    <form action = "" method = "POST" id = "myForm"> {% csrf_token %}
+        <input type = "hidden" value = "" name = "test" id = "myInput">
+    
+    </form>
+
+
+     <!--  <div id="areaA"><img src="/images/book_geners_images/open-book.svg"></div>
+      <div id="areaB"><img src="/images/book_geners_images/open-book.svg"></div>
+      <div id="areaC"><img src="/images/book_geners_images/open-book.svg"></div>
+      <div id="areaD"><img src="/images/book_geners_images/open-book.svg"></div>
+      <div id="areaE"><img src="/images/book_geners_images/open-book.svg"></div>
+      <div id="areaF"><img src="/images/book_geners_images/open-book.svg"></div>
+      <div id="areaA"><img src="/images/book_geners_images/open-book.svg"></div>
+      <div id="areaB"><img src="/images/book_geners_images/open-book.svg"></div> -->
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block js %}
+    <script type="text/javascript">
+        console.log("Test");
+        var generes_tag = [];
+        let set = new Set();  
+
+        $(".romance").click(function(){
+                        generes_tag.push("romance");
+
+        });
+
+        $(".art").click(function(){
+                        generes_tag.push("art");
+        });        
+
+        $(".crime").click(function(){
+                        generes_tag.push("crime");
+        });
+
+        $(".horror").click(function(){
+           
+            generes_tag.push("horror");
+        });
+
+        $(".cooking").click(function(){
+                        generes_tag.push("cooking");
+        });
+
+        $(".adventure").click(function(){
+                        generes_tag.push("adventure");
+        });
+
+        $(".fantasy").click(function(){
+            generes_tag.push("fantasy");
+        });
+
+        $(".history").click(function(){
+           
+            generes_tag.push("history");
+        });
+
+    
+        $(".travel").click(function(){
+            
+            generes_tag.push("travel");
+        });
+
+    
+        $(".fiction").click(function(){
+            
+            generes_tag.push("fiction");
+        });
+
+        $(".sci-fi").click(function(){
+            
+            generes_tag.push("sci-fi");
+        });
+
+        console.log(generes_tag);
+
+
+            
+        function send_data()
+        {
+            document.getElementById("myInput").value = generes_tag; 
+            document.getElementById("myForm").submit(); 
+          
+            
+        };
+    </script>
+{% endblock %}

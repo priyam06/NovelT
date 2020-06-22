@@ -1,0 +1,74 @@
+/*.my_row{
+	height: 500px;
+}*/
+body{
+    background-color: #DAE0E2;
+}
+
+.left_book_detail{
+	padding: 20px;
+	margin-left:-50px;
+	margin-top: 50px;
+}
+
+
+.right_book_detail{
+
+	padding: 50px;
+	position: fixed;
+	right: 350px;
+
+}
+
+.book_cover{
+	height: 550px;
+	width: 400px;
+}
+
+.title_row{
+	font-family: 'Josefin Sans', 'Poppins', sans-serif;
+	font-size: 30px;
+	padding: 15px;
+}
+
+.author_row{
+	font-family: 'Josefin Sans','Poppins', sans-serif;
+	font-size: 20px;
+	padding: 15px;
+}
+
+.isbn_row{
+	font-family: 'Josefin Sans', 'Poppins', sans-serif;
+	font-size: 20px;
+	padding: 15px;
+}
+
+.genere_row{
+	font-family: 'Josefin Sans','Poppins', sans-serif;
+	font-size: 20px;
+	padding: 15px;
+}
+
+#read_btn{
+	padding-right: 140px;
+}
+
+.synopsis_row{
+	font-family: 'Josefin Sans','Poppins', sans-serif;
+	text-align: justify;
+	padding: 15px;
+	width: 500px;
+
+}
+
+#syn{
+	font-size: 20px;
+}
+
+#syn_text{
+	margin-left: 15px;
+}
+
+.buttons{
+	margin-top: 5px;
+}
