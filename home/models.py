@@ -15,7 +15,7 @@ class Profile(models.Model):
     location    =   models.CharField(max_length = 50, blank = True)
     occupation  =   models.CharField(max_length = 50, blank = True)
     bio         =   models.TextField(blank = True)
-    profile_pic =   models.ImageField(default = '/static/images/profile_pic/default.jpg', upload_to="profile_pic", null = True, blank = True)
+    profile_pic =   models.ImageField(default = 'default/default.jpg', upload_to="profile_pic", null = True, blank = True)
     pref_genere  =   models.CharField(max_length = 100, blank = True)
 
     def __str__(self):

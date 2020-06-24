@@ -83,3 +83,11 @@ body{
 	position: relative;
 	left:200px;
 }
+
+#gen{
+	background-color: orange;
+}
+
+.forth_row{
+	padding-top: 20px;
+}

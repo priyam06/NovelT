@@ -23,6 +23,7 @@ def home(request):
         if request.method == 'POST':
             test = request.POST['test']
             print(test)
+            print(test)
 
         page = request.GET.get('page', 1)
         paginator = Paginator(all_books, 4)
@@ -41,6 +42,7 @@ def home(request):
 
         except EmptyPage:
             all_books = paginator.page(paginator.num_pages)
+
 
     except:
         redirect('home:home')
@@ -109,8 +111,14 @@ def register_user(request):
 def afterRegister(request):
 
     if request.method == 'POST':
-        test = request.POST.get('test')
-        print(test)
+        pref_gen = request.POST.get('test')
+        print(pref_gen)
+        print(type(pref_gen))
+        profile = Profile.objects.get(user = request.user)
+        profile.pref_genere = pref_gen
+        profile.save() 
+        return redirect('home:edit-profile')
+
     return render(request,'home/afterRegister.html')
 
 def user_profile(request):
@@ -124,6 +132,15 @@ def user_profile(request):
     paginator_two = Paginator(user_intrested_books, 4)
     paginator_three = Paginator(reading_books, 4)
     
+
+    pref_gen = Profile.objects.get(user = request.user);  #TO DISPLAY GENERS THAT USER LIKE
+    if pref_gen.pref_genere:
+        pref_gen_list = pref_gen.pref_genere;
+        pref_gen_list = pref_gen_list.split(',')
+        pref_gen_list = [gen.capitalize() for gen in pref_gen_list]
+    else:
+        pref_gen_list = ""
+
     try:
         all_books = paginator.page(page)
         user_intrested_books = paginator_two.page(page)
@@ -142,6 +159,7 @@ def user_profile(request):
         'user_intrested_books': user_intrested_books,
         'all_books': all_books,
         'reading_books': reading_books,
+        'pref_gen_list': pref_gen_list,
     }
         
    
@@ -155,7 +173,7 @@ def edit_profile(request):
             user_form.save()
             profile_form.save()
             messages.success(request,f"your account is updated")
-            redirect('home:home')
+            return redirect('home:profile')
     else:
         user_form       = UserUpdateForm(instance = request.user)
         profile_form    = UserProfileForm(instance = request.user.profile)

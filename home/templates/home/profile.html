@@ -12,14 +12,15 @@
 
 {% block content %}
 
-
 	<div class = "container"> 
 		<div class = "row main_row">
 			<div class = "col-4 profile-tab">					
 					<div class = "row first_row">
 
 						<div class = "col-5">
-							<img src = "{{ user.profile.profile_pic.url }}" alt = "Profile_PIC" id = "profile_pic">
+							<img src = "{{ user.profile.profile_pic.url|default_if_none:'#' }}" alt = "Profile_PIC" id = "profile_pic">
+
+
 						</div>
 
 						<div class = "col">
@@ -45,7 +46,20 @@
 						</div>
 					</div>
 
-					<p id="msg"> {{ message }} </p>
+					<div class = "row forth_row">
+
+						<div class = "col bio">
+							<h4>Genres you like</h4>
+							{% for gen in pref_gen_list %}
+								<button class = "btn btn-info" disabled>{{ gen }}</button>
+							{% endfor %}
+							
+							
+						</div>
+
+					</div>
+
+					
 			</div>
 
 			<div class = "col-8 extra-tab" >
@@ -110,5 +124,5 @@
 {% block js %}
 
 	alert("Go to Profile -> setting to setup your profile.");
-	
+		
 {% endblock %}
